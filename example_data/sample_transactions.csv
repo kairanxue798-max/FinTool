@@ -1,0 +1,22 @@
+date,account,amount,type
+2024-01-01,Cash,100000,debit
+2024-01-02,Revenue,50000,credit
+2024-01-03,Revenue,30000,credit
+2024-01-04,Operating Expenses,15000,debit
+2024-01-05,Salaries,20000,debit
+2024-01-06,Rent,5000,debit
+2024-01-07,Accounts Receivable,25000,debit
+2024-01-08,Revenue,40000,credit
+2024-01-09,Marketing,8000,debit
+2024-01-10,Utilities,3000,debit
+2024-01-11,Accounts Payable,12000,credit
+2024-01-12,Loans,50000,credit
+2024-01-13,Property,200000,debit
+2024-01-14,Equipment,50000,debit
+2024-01-15,Depreciation,5000,debit
+2024-01-16,Capital,150000,credit
+2024-01-17,Revenue,35000,credit
+2024-01-18,Cost of Goods Sold,18000,debit
+2024-01-19,Inventory,22000,debit
+2024-01-20,Interest Income,2000,credit
+

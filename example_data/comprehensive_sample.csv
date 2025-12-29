@@ -1,0 +1,236 @@
+date,account,amount,type,entity
+2024-01-01,Cash,150000,debit,Subsidiary A
+2024-01-02,Revenue,75000,credit,Subsidiary A
+2024-01-03,Revenue,45000,credit,Subsidiary A
+2024-01-04,Operating Expenses,25000,debit,Subsidiary A
+2024-01-05,Salaries,35000,debit,Subsidiary A
+2024-01-06,Rent,8000,debit,Subsidiary A
+2024-01-07,Accounts Receivable,40000,debit,Subsidiary A
+2024-01-08,Revenue,60000,credit,Subsidiary A
+2024-01-09,Marketing,12000,debit,Subsidiary A
+2024-01-10,Utilities,5000,debit,Subsidiary A
+2024-01-11,Accounts Payable,18000,credit,Subsidiary A
+2024-01-12,Loans,80000,credit,Subsidiary A
+2024-01-13,Property,300000,debit,Subsidiary A
+2024-01-14,Equipment,75000,debit,Subsidiary A
+2024-01-15,Depreciation,8000,debit,Subsidiary A
+2024-01-16,Capital,200000,credit,Subsidiary A
+2024-01-17,Revenue,55000,credit,Subsidiary A
+2024-01-18,Cost of Goods Sold,28000,debit,Subsidiary A
+2024-01-19,Inventory,35000,debit,Subsidiary A
+2024-01-20,Interest Income,3000,credit,Subsidiary A
+2024-01-21,Accounts Receivable,30000,debit,Subsidiary A
+2024-01-22,Revenue,50000,credit,Subsidiary A
+2024-01-23,Operating Expenses,20000,debit,Subsidiary A
+2024-01-24,Salaries,32000,debit,Subsidiary A
+2024-01-25,Accounts Receivable,25000,debit,Subsidiary A
+2024-01-26,Revenue,65000,credit,Subsidiary A
+2024-01-27,Marketing,10000,debit,Subsidiary A
+2024-01-28,Utilities,4500,debit,Subsidiary A
+2024-01-29,Accounts Payable,15000,credit,Subsidiary A
+2024-01-30,Revenue,70000,credit,Subsidiary A
+2024-01-31,Cost of Goods Sold,30000,debit,Subsidiary A
+2024-02-01,Cash,120000,debit,Subsidiary A
+2024-02-02,Revenue,80000,credit,Subsidiary A
+2024-02-03,Revenue,55000,credit,Subsidiary A
+2024-02-04,Operating Expenses,22000,debit,Subsidiary A
+2024-02-05,Salaries,36000,debit,Subsidiary A
+2024-02-06,Rent,8000,debit,Subsidiary A
+2024-02-07,Accounts Receivable,45000,debit,Subsidiary A
+2024-02-08,Revenue,70000,credit,Subsidiary A
+2024-02-09,Marketing,15000,debit,Subsidiary A
+2024-02-10,Utilities,5500,debit,Subsidiary A
+2024-02-11,Accounts Payable,20000,credit,Subsidiary A
+2024-02-12,Revenue,65000,credit,Subsidiary A
+2024-02-13,Cost of Goods Sold,32000,debit,Subsidiary A
+2024-02-14,Inventory,40000,debit,Subsidiary A
+2024-02-15,Revenue,75000,credit,Subsidiary A
+2024-02-16,Operating Expenses,18000,debit,Subsidiary A
+2024-02-17,Salaries,34000,debit,Subsidiary A
+2024-02-18,Accounts Receivable,35000,debit,Subsidiary A
+2024-02-19,Revenue,60000,credit,Subsidiary A
+2024-02-20,Interest Income,4000,credit,Subsidiary A
+2024-02-21,Marketing,11000,debit,Subsidiary A
+2024-02-22,Utilities,5000,debit,Subsidiany A
+2024-02-23,Revenue,68000,credit,Subsidiary A
+2024-02-24,Cost of Goods Sold,29000,debit,Subsidiary A
+2024-02-25,Accounts Payable,17000,credit,Subsidiary A
+2024-02-26,Revenue,72000,credit,Subsidiary A
+2024-02-27,Operating Expenses,24000,debit,Subsidiary A
+2024-02-28,Salaries,37000,debit,Subsidiary A
+2024-02-29,Revenue,78000,credit,Subsidiary A
+2024-03-01,Cash,180000,debit,Subsidiary A
+2024-03-02,Revenue,85000,credit,Subsidiary A
+2024-03-03,Revenue,60000,credit,Subsidiary A
+2024-03-04,Operating Expenses,26000,debit,Subsidiary A
+2024-03-05,Salaries,38000,debit,Subsidiary A
+2024-03-06,Rent,8000,debit,Subsidiary A
+2024-03-07,Accounts Receivable,50000,debit,Subsidiary A
+2024-03-08,Revenue,80000,credit,Subsidiary A
+2024-03-09,Marketing,18000,debit,Subsidiary A
+2024-03-10,Utilities,6000,debit,Subsidiary A
+2024-03-11,Accounts Payable,22000,credit,Subsidiary A
+2024-03-12,Revenue,75000,credit,Subsidiary A
+2024-03-13,Cost of Goods Sold,35000,debit,Subsidiary A
+2024-03-14,Inventory,45000,debit,Subsidiary A
+2024-03-15,Revenue,90000,credit,Subsidiary A
+2024-01-01,Cash,100000,debit,Subsidiary B
+2024-01-02,Revenue,50000,credit,Subsidiary B
+2024-01-03,Revenue,30000,credit,Subsidiary B
+2024-01-04,Operating Expenses,15000,debit,Subsidiary B
+2024-01-05,Salaries,20000,debit,Subsidiary B
+2024-01-06,Rent,5000,debit,Subsidiary B
+2024-01-07,Accounts Receivable,25000,debit,Subsidiary B
+2024-01-08,Revenue,40000,credit,Subsidiary B
+2024-01-09,Marketing,8000,debit,Subsidiary B
+2024-01-10,Utilities,3000,debit,Subsidiary B
+2024-01-11,Accounts Payable,12000,credit,Subsidiary B
+2024-01-12,Loans,50000,credit,Subsidiary B
+2024-01-13,Property,200000,debit,Subsidiary B
+2024-01-14,Equipment,50000,debit,Subsidiary B
+2024-01-15,Depreciation,5000,debit,Subsidiary B
+2024-01-16,Capital,150000,credit,Subsidiary B
+2024-01-17,Revenue,35000,credit,Subsidiary B
+2024-01-18,Cost of Goods Sold,18000,debit,Subsidiary B
+2024-01-19,Inventory,22000,debit,Subsidiary B
+2024-01-20,Interest Income,2000,credit,Subsidiary B
+2024-01-21,Accounts Receivable,20000,debit,Subsidiary B
+2024-01-22,Revenue,45000,credit,Subsidiary B
+2024-01-23,Operating Expenses,12000,debit,Subsidiary B
+2024-01-24,Salaries,18000,debit,Subsidiary B
+2024-01-25,Accounts Receivable,15000,debit,Subsidiary B
+2024-01-26,Revenue,50000,credit,Subsidiary B
+2024-01-27,Marketing,6000,debit,Subsidiary B
+2024-01-28,Utilities,2500,debit,Subsidiary B
+2024-01-29,Accounts Payable,10000,credit,Subsidiary B
+2024-01-30,Revenue,55000,credit,Subsidiary B
+2024-01-31,Cost of Goods Sold,20000,debit,Subsidiary B
+2024-02-01,Cash,80000,debit,Subsidiary B
+2024-02-02,Revenue,60000,credit,Subsidiary B
+2024-02-03,Revenue,40000,credit,Subsidiary B
+2024-02-04,Operating Expenses,14000,debit,Subsidiary B
+2024-02-05,Salaries,22000,debit,Subsidiary B
+2024-02-06,Rent,5000,debit,Subsidiary B
+2024-02-07,Accounts Receivable,30000,debit,Subsidiary B
+2024-02-08,Revenue,55000,credit,Subsidiary B
+2024-02-09,Marketing,7000,debit,Subsidiary B
+2024-02-10,Utilities,3000,debit,Subsidiary B
+2024-02-11,Accounts Payable,11000,credit,Subsidiary B
+2024-02-12,Revenue,60000,credit,Subsidiary B
+2024-02-13,Cost of Goods Sold,22000,debit,Subsidiary B
+2024-02-14,Inventory,25000,debit,Subsidiary B
+2024-02-15,Revenue,65000,credit,Subsidiary B
+2024-02-16,Operating Expenses,13000,debit,Subsidiary B
+2024-02-17,Salaries,21000,debit,Subsidiary B
+2024-02-18,Accounts Receivable,22000,debit,Subsidiary B
+2024-02-19,Revenue,58000,credit,Subsidiary B
+2024-02-20,Interest Income,2500,credit,Subsidiary B
+2024-02-21,Marketing,6500,debit,Subsidiary B
+2024-02-22,Utilities,2800,debit,Subsidiary B
+2024-02-23,Revenue,62000,credit,Subsidiary B
+2024-02-24,Cost of Goods Sold,21000,debit,Subsidiary B
+2024-02-25,Accounts Payable,10500,credit,Subsidiary B
+2024-02-26,Revenue,68000,credit,Subsidiary B
+2024-02-27,Operating Expenses,15000,debit,Subsidiary B
+2024-02-28,Salaries,23000,debit,Subsidiary B
+2024-02-29,Revenue,70000,credit,Subsidiary B
+2024-03-01,Cash,120000,debit,Subsidiary B
+2024-03-02,Revenue,75000,credit,Subsidiary B
+2024-03-03,Revenue,50000,credit,Subsidiary B
+2024-03-04,Operating Expenses,16000,debit,Subsidiary B
+2024-03-05,Salaries,24000,debit,Subsidiary B
+2024-03-06,Rent,5000,debit,Subsidiary B
+2024-03-07,Accounts Receivable,35000,debit,Subsidiary B
+2024-03-08,Revenue,70000,credit,Subsidiary B
+2024-03-09,Marketing,8000,debit,Subsidiary B
+2024-03-10,Utilities,3200,debit,Subsidiary B
+2024-03-11,Accounts Payable,12000,credit,Subsidiary B
+2024-03-12,Revenue,72000,credit,Subsidiary B
+2024-03-13,Cost of Goods Sold,24000,debit,Subsidiary B
+2024-03-14,Inventory,28000,debit,Subsidiary B
+2024-03-15,Revenue,80000,credit,Subsidiary B
+2024-01-01,Cash,80000,debit,Subsidiary C
+2024-01-02,Revenue,40000,credit,Subsidiary C
+2024-01-03,Revenue,25000,credit,Subsidiary C
+2024-01-04,Operating Expenses,10000,debit,Subsidiary C
+2024-01-05,Salaries,15000,debit,Subsidiary C
+2024-01-06,Rent,4000,debit,Subsidiary C
+2024-01-07,Accounts Receivable,20000,debit,Subsidiary C
+2024-01-08,Revenue,35000,credit,Subsidiary C
+2024-01-09,Marketing,5000,debit,Subsidiary C
+2024-01-10,Utilities,2000,debit,Subsidiary C
+2024-01-11,Accounts Payable,8000,credit,Subsidiary C
+2024-01-12,Loans,40000,credit,Subsidiary C
+2024-01-13,Property,150000,debit,Subsidiary C
+2024-01-14,Equipment,40000,debit,Subsidiary C
+2024-01-15,Depreciation,4000,debit,Subsidiary C
+2024-01-16,Capital,100000,credit,Subsidiary C
+2024-01-17,Revenue,30000,credit,Subsidiary C
+2024-01-18,Cost of Goods Sold,12000,debit,Subsidiary C
+2024-01-19,Inventory,15000,debit,Subsidiary C
+2024-01-20,Interest Income,1500,credit,Subsidiary C
+2024-01-21,Accounts Receivable,15000,debit,Subsidiary C
+2024-01-22,Revenue,40000,credit,Subsidiary C
+2024-01-23,Operating Expenses,9000,debit,Subsidiary C
+2024-01-24,Salaries,14000,debit,Subsidiary C
+2024-01-25,Accounts Receivable,12000,debit,Subsidiary C
+2024-01-26,Revenue,45000,credit,Subsidiary C
+2024-01-27,Marketing,4500,debit,Subsidiary C
+2024-01-28,Utilities,1800,debit,Subsidiary C
+2024-01-29,Accounts Payable,7500,credit,Subsidiary C
+2024-01-30,Revenue,50000,credit,Subsidiary C
+2024-01-31,Cost of Goods Sold,15000,debit,Subsidiary C
+2024-02-01,Cash,60000,debit,Subsidiary C
+2024-02-02,Revenue,55000,credit,Subsidiary C
+2024-02-03,Revenue,35000,credit,Subsidiary C
+2024-02-04,Operating Expenses,11000,debit,Subsidiary C
+2024-02-05,Salaries,16000,debit,Subsidiary C
+2024-02-06,Rent,4000,debit,Subsidiary C
+2024-02-07,Accounts Receivable,25000,debit,Subsidiary C
+2024-02-08,Revenue,50000,credit,Subsidiary C
+2024-02-09,Marketing,5500,debit,Subsidiary C
+2024-02-10,Utilities,2200,debit,Subsidiary C
+2024-02-11,Accounts Payable,9000,credit,Subsidiary C
+2024-02-12,Revenue,55000,credit,Subsidiary C
+2024-02-13,Cost of Goods Sold,16000,debit,Subsidiary C
+2024-02-14,Inventory,18000,debit,Subsidiary C
+2024-02-15,Revenue,60000,credit,Subsidiary C
+2024-02-16,Operating Expenses,10000,debit,Subsidiary C
+2024-02-17,Salaries,15000,debit,Subsidiary C
+2024-02-18,Accounts Receivable,18000,debit,Subsidiary C
+2024-02-19,Revenue,52000,credit,Subsidiary C
+2024-02-20,Interest Income,1800,credit,Subsidiary C
+2024-02-21,Marketing,5000,debit,Subsidiary C
+2024-02-22,Utilities,2000,debit,Subsidiary C
+2024-02-23,Revenue,58000,credit,Subsidiary C
+2024-02-24,Cost of Goods Sold,14000,debit,Subsidiary C
+2024-02-25,Accounts Payable,8500,credit,Subsidiary C
+2024-02-26,Revenue,62000,credit,Subsidiary C
+2024-02-27,Operating Expenses,12000,debit,Subsidiary C
+2024-02-28,Salaries,17000,debit,Subsidiary C
+2024-02-29,Revenue,65000,credit,Subsidiary C
+2024-03-01,Cash,100000,debit,Subsidiary C
+2024-03-02,Revenue,70000,credit,Subsidiary C
+2024-03-03,Revenue,45000,credit,Subsidiary C
+2024-03-04,Operating Expenses,13000,debit,Subsidiary C
+2024-03-05,Salaries,18000,debit,Subsidiary C
+2024-03-06,Rent,4000,debit,Subsidiary C
+2024-03-07,Accounts Receivable,28000,debit,Subsidiary C
+2024-03-08,Revenue,65000,credit,Subsidiary C
+2024-03-09,Marketing,6000,debit,Subsidiary C
+2024-03-10,Utilities,2400,debit,Subsidiary C
+2024-03-11,Accounts Payable,9500,credit,Subsidiary C
+2024-03-12,Revenue,68000,credit,Subsidiary C
+2024-03-13,Cost of Goods Sold,17000,debit,Subsidiary C
+2024-03-14,Inventory,20000,debit,Subsidiary C
+2024-03-15,Revenue,75000,credit,Subsidiary C
+2024-01-06,Revenue,15000,credit,Subsidiary A
+2024-01-13,Revenue,20000,credit,Subsidiary B
+2024-01-20,Revenue,18000,credit,Subsidiary C
+2024-02-03,Revenue,25000,credit,Subsidiary A
+2024-02-10,Revenue,22000,credit,Subsidiary B
+2024-02-17,Revenue,20000,credit,Subsidiary C
+2024-03-03,Revenue,30000,credit,Subsidiary A
+2024-03-10,Revenue,28000,credit,Subsidiary B
+2024-03-17,Revenue,25000,credit,Subsidiary C
+
