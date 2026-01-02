@@ -1,20 +1,70 @@
+/* Corporate Trust Design System - App Styles */
+
 .app {
   min-height: 100vh;
   padding: 0;
   position: relative;
   z-index: 1;
+  background: var(--color-bg);
 }
 
+/* Soft Blob Background Elements - Atmospheric Depth */
+.app::before,
+.app::after {
+  content: '';
+  position: fixed;
+  border-radius: 50%;
+  filter: blur(80px);
+  opacity: 0.3;
+  pointer-events: none;
+  z-index: 0;
+  animation: float 20s ease-in-out infinite;
+}
+
+.app::before {
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, var(--color-indigo-600) 0%, transparent 70%);
+  top: -200px;
+  right: -200px;
+  animation-delay: 0s;
+}
+
+.app::after {
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, var(--color-violet-600) 0%, transparent 70%);
+  bottom: -150px;
+  left: -150px;
+  animation-delay: 10s;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translate(0, 0) scale(1);
+  }
+  33% {
+    transform: translate(30px, -30px) scale(1.1);
+  }
+  66% {
+    transform: translate(-20px, 20px) scale(0.9);
+  }
+}
+
+/* Hero Header - Corporate Trust Style */
 .app-header {
   text-align: center;
-  color: white;
-  margin-bottom: 60px;
-  padding: 60px 20px 40px;
+  margin-bottom: var(--spacing-3xl); /* 收紧间距：从 4xl 改为 3xl */
+  padding: var(--spacing-3xl) var(--spacing-lg) var(--spacing-2xl); /* 收紧内边距 */
   position: relative;
   overflow: hidden;
   z-index: 2;
+  background: var(--gradient-primary);
+  border-radius: 0 0 var(--radius-lg) var(--radius-lg);
+  box-shadow: var(--shadow-card-hover);
 }
 
+/* Decorative pattern overlay */
 .app-header::before {
   content: '';
   position: absolute;
@@ -22,22 +72,13 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background: linear-gradient(135deg, rgba(102, 126, 234, 0.9) 0%, rgba(118, 75, 162, 0.9) 100%);
-  backdrop-filter: blur(10px);
-  z-index: -1;
-}
-
-.app-header::after {
-  content: '';
-  position: absolute;
-  top: -50%;
-  left: -50%;
-  width: 200%;
-  height: 200%;
-  background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 1px, transparent 1px);
-  background-size: 50px 50px;
-  animation: moveBackground 20s linear infinite;
-  z-index: -1;
+  background: 
+    radial-gradient(circle at 20% 50%, rgba(255, 255, 255, 0.1) 1px, transparent 1px),
+    radial-gradient(circle at 80% 50%, rgba(255, 255, 255, 0.1) 1px, transparent 1px);
+  background-size: 60px 60px, 60px 60px;
+  opacity: 0.4;
+  animation: moveBackground 30s linear infinite;
+  z-index: 0;
 }
 
 @keyframes moveBackground {
@@ -45,32 +86,44 @@
     transform: translate(0, 0);
   }
   100% {
-    transform: translate(50px, 50px);
+    transform: translate(60px, 60px);
   }
 }
 
 .app-header h1 {
-  font-size: 3.5rem;
-  font-weight: 700;
-  margin-bottom: 16px;
-  text-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  font-size: clamp(2rem, 4.5vw, 3rem); /* Responsive: 32px to 48px - 减小标题 */
+  font-weight: var(--font-weight-extrabold);
+  margin-bottom: var(--spacing-md);
   letter-spacing: -0.02em;
   animation: fadeInDown 0.8s ease-out;
-  background: linear-gradient(135deg, #ffffff 0%, #f0f0f0 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  color: white;
+  text-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  position: relative;
+  z-index: 1;
+  line-height: 1.1;
+}
+
+/* Split headline effect - first 3 words normal, rest gradient */
+.app-header h1::after {
+  content: '';
+  display: block;
+  width: 80px;
+  height: 4px;
+  background: rgba(255, 255, 255, 0.5);
+  margin: var(--spacing-md) auto 0;
+  border-radius: var(--radius-full);
 }
 
 .app-header p {
-  font-size: 1.25rem;
-  opacity: 0.95;
-  font-weight: 400;
-  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  font-size: clamp(1.125rem, 2vw, 1.5rem); /* 18px to 24px */
+  color: rgba(255, 255, 255, 0.95);
+  font-weight: var(--font-weight-regular);
   animation: fadeInUp 0.8s ease-out 0.2s both;
-  max-width: 600px;
+  max-width: 700px;
   margin: 0 auto;
-  line-height: 1.6;
+  line-height: 1.7;
+  position: relative;
+  z-index: 1;
 }
 
 @keyframes fadeInDown {
@@ -95,49 +148,77 @@
   }
 }
 
+/* Main Content Area */
 .app-main {
-  max-width: 1400px;
+  max-width: 1280px; /* max-w-7xl equivalent */
   margin: 0 auto;
-  padding: 0 24px 60px;
+  padding: 0 var(--spacing-lg) var(--spacing-3xl); /* 收紧底部间距 */
   position: relative;
   z-index: 2;
 }
 
+@media (min-width: 640px) {
+  .app-main {
+    padding: 0 var(--spacing-xl) var(--spacing-4xl);
+  }
+}
+
+/* Error Message - Refined Styling */
 .error-message {
-  background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
+  background: linear-gradient(135deg, #EF4444 0%, #DC2626 100%);
   color: white;
-  padding: 20px 24px;
-  border-radius: 12px;
-  margin: 24px 0;
+  padding: var(--spacing-lg) var(--spacing-xl);
+  border-radius: var(--radius-md);
+  margin: var(--spacing-xl) 0;
   text-align: center;
-  box-shadow: var(--shadow-lg);
+  box-shadow: var(--shadow-card-default);
   animation: shake 0.5s ease-in-out;
-  font-weight: 500;
+  font-weight: var(--font-weight-medium);
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 10px;
+  gap: var(--spacing-sm);
+  border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 @keyframes shake {
-  0%, 100% { transform: translateX(0); }
-  25% { transform: translateX(-10px); }
-  75% { transform: translateX(10px); }
+  0%, 100% { 
+    transform: translateX(0); 
+  }
+  25% { 
+    transform: translateX(-10px); 
+  }
+  75% { 
+    transform: translateX(10px); 
+  }
 }
 
+/* Success Message */
 .success-message {
-  background: linear-gradient(135deg, var(--success-color) 0%, #059669 100%);
+  background: linear-gradient(135deg, var(--color-accent-success) 0%, #059669 100%);
   color: white;
-  padding: 20px 24px;
-  border-radius: 12px;
-  margin: 24px 0;
+  padding: var(--spacing-lg) var(--spacing-xl);
+  border-radius: var(--radius-md);
+  margin: var(--spacing-xl) 0;
   text-align: center;
-  box-shadow: var(--shadow-lg);
-  font-weight: 500;
+  box-shadow: var(--shadow-card-default);
+  font-weight: var(--font-weight-medium);
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 10px;
+  gap: var(--spacing-sm);
   animation: fadeInUp 0.5s ease-out;
+  border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
+/* Responsive adjustments */
+@media (max-width: 640px) {
+  .app-header {
+    padding: var(--spacing-3xl) var(--spacing-md) var(--spacing-2xl);
+    margin-bottom: var(--spacing-3xl);
+  }
+  
+  .app-main {
+    padding: 0 var(--spacing-md) var(--spacing-3xl);
+  }
+}

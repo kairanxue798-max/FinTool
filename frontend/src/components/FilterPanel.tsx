@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import './FilterPanel.css'
 
 interface FilterPanelProps {
@@ -11,6 +11,8 @@ function FilterPanel({ transactions, onFilterChange }: FilterPanelProps) {
   const [selectedEntity, setSelectedEntity] = useState<string>('')
   const [startDate, setStartDate] = useState<string>('')
   const [endDate, setEndDate] = useState<string>('')
+  const startDateRef = useRef<HTMLInputElement>(null)
+  const endDateRef = useRef<HTMLInputElement>(null)
 
   useEffect(() => {
     // Extract unique entities from transactions
@@ -23,6 +25,18 @@ function FilterPanel({ transactions, onFilterChange }: FilterPanelProps) {
     })
     setEntities(Array.from(uniqueEntities).sort())
   }, [transactions])
+
+  useEffect(() => {
+    // Force English locale for date inputs
+    if (startDateRef.current) {
+      startDateRef.current.setAttribute('lang', 'en-US')
+      startDateRef.current.setAttribute('data-lang', 'en-US')
+    }
+    if (endDateRef.current) {
+      endDateRef.current.setAttribute('lang', 'en-US')
+      endDateRef.current.setAttribute('data-lang', 'en-US')
+    }
+  }, [])
 
   useEffect(() => {
     // Notify parent of filter changes
@@ -69,12 +83,14 @@ function FilterPanel({ transactions, onFilterChange }: FilterPanelProps) {
         <div className="filter-group">
           <label htmlFor="start-date">Start Date</label>
           <input
+            ref={startDateRef}
             id="start-date"
             type="date"
             className="filter-input"
             value={startDate}
             onChange={(e) => setStartDate(e.target.value)}
-            lang="en"
+            lang="en-US"
+            data-lang="en-US"
             placeholder="YYYY-MM-DD"
           />
         </div>
@@ -82,12 +98,14 @@ function FilterPanel({ transactions, onFilterChange }: FilterPanelProps) {
         <div className="filter-group">
           <label htmlFor="end-date">End Date</label>
           <input
+            ref={endDateRef}
             id="end-date"
             type="date"
             className="filter-input"
             value={endDate}
             onChange={(e) => setEndDate(e.target.value)}
-            lang="en"
+            lang="en-US"
+            data-lang="en-US"
             placeholder="YYYY-MM-DD"
           />
         </div>

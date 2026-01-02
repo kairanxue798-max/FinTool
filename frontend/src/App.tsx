@@ -6,6 +6,7 @@ import FinancialChatbot from './components/FinancialChatbot'
 import InteractiveDotsGrid from './components/InteractiveDotsGrid'
 import FilterPanel from './components/FilterPanel'
 import FXRatePanel from './components/FXRatePanel'
+import SummaryPanel from './components/SummaryPanel'
 import './App.css'
 
 interface FinancialData {
@@ -165,10 +166,13 @@ function App() {
         <FileUpload onFileUpload={handleFileUpload} loading={loading} />
         
         {allTransactions.length > 0 && (
-          <FilterPanel 
-            transactions={allTransactions} 
-            onFilterChange={handleFilterChange}
-          />
+          <>
+            <SummaryPanel transactions={allTransactions} />
+            <FilterPanel 
+              transactions={allTransactions} 
+              onFilterChange={handleFilterChange}
+            />
+          </>
         )}
         
         {error && (

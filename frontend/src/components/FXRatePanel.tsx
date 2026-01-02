@@ -110,7 +110,8 @@ function FXRatePanel() {
             className="fx-date-input"
             value={selectedDate}
             onChange={handleDateChange}
-            lang="en"
+            lang="en-US"
+            data-lang="en-US"
           />
         </div>
       </div>

@@ -18,13 +18,7 @@ interface FinancialChatbotProps {
 }
 
 function FinancialChatbot({ financialData, transactions = [], selectedEntity }: FinancialChatbotProps) {
-  const [messages, setMessages] = useState<Message[]>([
-    {
-      role: 'assistant',
-      content: 'Hello! I\'m your financial AI assistant. I can help you with:\n\n• Multi-entity/subsidiary analysis\n• KPI metrics (AR Aging, DSO)\n• Revenue analytics (YTD, variance, trailing 3M, TOP N)\n• Foreign exchange rates\n• Unusual transaction detection\n• Financial statement insights\n\nTry asking me with the suggested questions below! 👇',
-      timestamp: new Date()
-    }
-  ])
+  const [messages, setMessages] = useState<Message[]>([]) // 移除初始问候消息
   const [input, setInput] = useState('')
   const [loading, setLoading] = useState(false)
   const messagesEndRef = useRef<HTMLDivElement>(null)
@@ -266,11 +260,6 @@ function FinancialChatbot({ financialData, transactions = [], selectedEntity }: 
 
   return (
     <div className="financial-chatbot">
-      <div className="chatbot-header">
-        <h3>🤖 Financial AI Assistant</h3>
-        <p>Ask me anything about your financial data</p>
-      </div>
-
       <div className="chatbot-messages">
         {messages.map((message, index) => (
           <div
@@ -311,15 +300,18 @@ function FinancialChatbot({ financialData, transactions = [], selectedEntity }: 
       </div>
 
       <div className="chatbot-input-container">
-        <textarea
-          className="chatbot-input"
-          value={input}
-          onChange={(e) => setInput(e.target.value)}
-          onKeyPress={handleKeyPress}
-          placeholder="Ask about variance analysis, KPIs, financial insights..."
-          rows={2}
-          disabled={loading}
-        />
+        <div className="chatbot-input-wrapper">
+          <span className="chatbot-input-icon">🤖</span>
+          <textarea
+            className="chatbot-input"
+            value={input}
+            onChange={(e) => setInput(e.target.value)}
+            onKeyPress={handleKeyPress}
+            placeholder="Ask about variance analysis, KPIs, financial insights..."
+            rows={2}
+            disabled={loading}
+          />
+        </div>
         <button
           className="chatbot-send-button"
           onClick={handleSend}
@@ -337,67 +329,86 @@ function FinancialChatbot({ financialData, transactions = [], selectedEntity }: 
 
       <div className="suggested-questions">
         <h4>💡 Try asking me:</h4>
-        <div className="question-chips">
-          <button
-            className="question-chip"
-            onClick={() => setInput("What's the revenue YTD?")}
-          >
-            Revenue YTD
-          </button>
-          <button
-            className="question-chip"
-            onClick={() => setInput("Show me revenue variance compared to previous month")}
-          >
-            Revenue Variance
-          </button>
-          <button
-            className="question-chip"
-            onClick={() => setInput("Calculate trailing 3 months rolling revenue")}
-          >
-            Trailing 3M Revenue
-          </button>
-          <button
-            className="question-chip"
-            onClick={() => setInput("Show me TOP 10 revenue transactions")}
-          >
-            TOP N Revenue
-          </button>
-          <button
-            className="question-chip"
-            onClick={() => setInput("Find unusual transactions posted on weekends")}
-          >
-            Unusual Transactions
-          </button>
-          <button
-            className="question-chip"
-            onClick={() => setInput("Calculate AR Aging report")}
-          >
-            AR Aging
-          </button>
-          <button
-            className="question-chip"
-            onClick={() => setInput("What's the DSO (Days Sales Outstanding)?")}
-          >
-            DSO Calculation
-          </button>
-          <button
-            className="question-chip"
-            onClick={() => setInput("Show me FX rates for USD")}
-          >
-            FX Rates
-          </button>
-          <button
-            className="question-chip"
-            onClick={() => setInput("Which subsidiary has the highest revenue?")}
-          >
-            Highest Revenue Entity
-          </button>
-          <button
-            className="question-chip"
-            onClick={() => setInput("Compare revenue across all subsidiaries")}
-          >
-            Compare Entities
-          </button>
+        
+        {/* Performance Category */}
+        <div className="question-category">
+          <h5 className="category-title">📈 Performance</h5>
+          <div className="question-chips">
+            <button
+              className="question-chip"
+              onClick={() => setInput("What's the revenue YTD?")}
+            >
+              Revenue YTD
+            </button>
+            <button
+              className="question-chip"
+              onClick={() => setInput("Show me revenue variance compared to previous month")}
+            >
+              Revenue Variance
+            </button>
+            <button
+              className="question-chip"
+              onClick={() => setInput("Calculate trailing 3 months rolling revenue")}
+            >
+              Trailing 3M Revenue
+            </button>
+            <button
+              className="question-chip"
+              onClick={() => setInput("Show me TOP 10 revenue transactions")}
+            >
+              TOP N Revenue
+            </button>
+            <button
+              className="question-chip"
+              onClick={() => setInput("Which subsidiary has the highest revenue?")}
+            >
+              Highest Revenue Entity
+            </button>
+            <button
+              className="question-chip"
+              onClick={() => setInput("Compare revenue across all subsidiaries")}
+            >
+              Compare Entities
+            </button>
+          </div>
+        </div>
+
+        {/* Risk and Unusual Transaction Category */}
+        <div className="question-category">
+          <h5 className="category-title">⚠️ Risk and Unusual Transaction</h5>
+          <div className="question-chips">
+            <button
+              className="question-chip"
+              onClick={() => setInput("Find unusual transactions posted on weekends")}
+            >
+              Unusual Transactions
+            </button>
+          </div>
+        </div>
+
+        {/* Cash and Working Capital Category */}
+        <div className="question-category">
+          <h5 className="category-title">💰 Cash and Working Capital</h5>
+          <div className="question-chips">
+            <button
+              className="question-chip"
+              onClick={() => setInput("Calculate AR Aging report")}
+            >
+              AR Aging
+            </button>
+            <button
+              className="question-chip"
+              onClick={() => setInput("What's the DSO (Days Sales Outstanding)?")}
+            >
+              DSO Calculation
+            </button>
+            <button
+              className="question-chip"
+              onClick={() => setInput("Show me FX rates for USD")}
+            >
+              FX Rates
+            </button>
+          </div>
         </div>
       </div>
     </div>

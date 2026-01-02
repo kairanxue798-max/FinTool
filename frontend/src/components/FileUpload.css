@@ -1,22 +1,40 @@
+/* Corporate Trust Design System - File Upload Component */
+
 .file-upload-container {
-  margin-bottom: 48px;
+  margin-bottom: var(--spacing-2xl); /* 收紧间距：从 3xl 改为 2xl */
   animation: fadeInUp 0.6s ease-out;
 }
 
 .file-upload-area {
-  background: rgba(255, 255, 255, 0.95);
-  backdrop-filter: blur(10px);
-  border: 3px dashed rgba(102, 126, 234, 0.3);
-  border-radius: 20px;
-  padding: 80px 40px;
+  background: var(--color-surface);
+  border: 2px dashed var(--color-border);
+  border-radius: var(--radius-md);
+  padding: var(--spacing-4xl) var(--spacing-xl);
   text-align: center;
   cursor: pointer;
-  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: var(--transition-smooth);
   position: relative;
   overflow: hidden;
-  box-shadow: var(--shadow-xl);
+  box-shadow: var(--shadow-card-default);
 }
 
+/* Hover state - Elevated card with colored shadow */
+.file-upload-area:hover {
+  border-color: var(--color-primary);
+  background: var(--color-surface);
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-card-hover);
+}
+
+/* Drag over state */
+.file-upload-area.dragover {
+  border-color: var(--color-secondary);
+  background: var(--gradient-bg-subtle);
+  transform: scale(1.02);
+  box-shadow: var(--shadow-card-hover);
+}
+
+/* Shimmer effect on hover */
 .file-upload-area::before {
   content: '';
   position: absolute;
@@ -24,41 +42,34 @@
   left: -100%;
   width: 100%;
   height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(102, 126, 234, 0.1), transparent);
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(79, 70, 229, 0.1),
+    transparent
+  );
   transition: left 0.5s;
+  z-index: 0;
 }
 
 .file-upload-area:hover::before {
   left: 100%;
 }
 
-.file-upload-area:hover {
-  border-color: #667eea;
-  background: rgba(255, 255, 255, 1);
-  transform: translateY(-4px);
-  box-shadow: 0 25px 50px -12px rgba(102, 126, 234, 0.25);
-}
-
-.file-upload-area.dragover {
-  border-color: #764ba2;
-  background: linear-gradient(135deg, rgba(102, 126, 234, 0.05) 0%, rgba(118, 75, 162, 0.05) 100%);
-  transform: scale(1.02);
-}
-
 .upload-content {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 20px;
+  gap: var(--spacing-lg);
   position: relative;
   z-index: 1;
 }
 
 .upload-icon {
-  font-size: 5rem;
-  margin-bottom: 10px;
+  font-size: 4rem;
+  margin-bottom: var(--spacing-sm);
   animation: float 3s ease-in-out infinite;
-  filter: drop-shadow(0 4px 8px rgba(102, 126, 234, 0.3));
+  filter: drop-shadow(0 4px 12px rgba(79, 70, 229, 0.3));
 }
 
 @keyframes float {
@@ -71,47 +82,53 @@
 }
 
 .upload-content h3 {
-  color: var(--text-primary);
-  font-size: 1.75rem;
-  font-weight: 700;
+  color: var(--color-text-main);
+  font-size: clamp(1.5rem, 3vw, 2rem); /* 24px to 32px */
+  font-weight: var(--font-weight-bold);
   margin: 0;
   letter-spacing: -0.01em;
 }
 
 .upload-content p {
-  color: var(--text-secondary);
+  color: var(--color-text-muted);
   margin: 0;
-  font-size: 1.05rem;
+  font-size: clamp(1rem, 2vw, 1.125rem); /* 16px to 18px */
   line-height: 1.6;
+  font-weight: var(--font-weight-regular);
 }
 
 .file-format {
-  font-size: 0.9rem;
-  color: #9ca3af;
+  font-size: 0.875rem;
+  color: var(--color-text-muted);
   font-style: italic;
-  background: var(--bg-gray-50);
-  padding: 8px 16px;
-  border-radius: 8px;
+  background: var(--color-indigo-50);
+  padding: var(--spacing-sm) var(--spacing-md);
+  border-radius: var(--radius-sm);
   display: inline-block;
-  margin-top: 8px;
+  margin-top: var(--spacing-sm);
+  border: 1px solid var(--color-indigo-100);
 }
 
+/* Primary Button - Corporate Trust Style - 更突出 */
 .upload-button {
-  background: var(--primary-gradient);
+  background: var(--gradient-primary);
   color: white;
   border: none;
-  padding: 16px 40px;
-  border-radius: 12px;
-  font-size: 1.05rem;
-  font-weight: 600;
+  padding: var(--spacing-lg) var(--spacing-3xl); /* 增加内边距使其更大 */
+  border-radius: var(--radius-full);
+  font-size: 1.125rem; /* 增大字体 */
+  font-weight: var(--font-weight-bold); /* 加粗字体 */
   cursor: pointer;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  margin-top: 16px;
-  box-shadow: 0 4px 14px 0 rgba(102, 126, 234, 0.39);
+  transition: var(--transition-smooth);
+  margin-top: var(--spacing-md);
+  box-shadow: 0 8px 24px rgba(79, 70, 229, 0.4), 0 4px 12px rgba(79, 70, 229, 0.3); /* 增强阴影 */
   position: relative;
   overflow: hidden;
+  font-family: var(--font-family);
+  letter-spacing: 0.02em; /* 增加字间距 */
 }
 
+/* Ripple effect on click */
 .upload-button::before {
   content: '';
   position: absolute;
@@ -130,13 +147,14 @@
   height: 300px;
 }
 
+/* Hover state - Lift with enhanced shadow */
 .upload-button:hover:not(:disabled) {
-  transform: translateY(-3px);
-  box-shadow: 0 8px 25px rgba(102, 126, 234, 0.5);
+  transform: translateY(-3px); /* 增加上浮距离 */
+  box-shadow: 0 12px 32px rgba(79, 70, 229, 0.5), 0 6px 16px rgba(79, 70, 229, 0.4); /* 更强的悬停阴影 */
 }
 
 .upload-button:active:not(:disabled) {
-  transform: translateY(-1px);
+  transform: translateY(0);
 }
 
 .upload-button:disabled {
@@ -145,3 +163,30 @@
   transform: none;
 }
 
+/* Focus state for accessibility */
+.upload-button:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 640px) {
+  .file-upload-area {
+    padding: var(--spacing-3xl) var(--spacing-lg);
+  }
+  
+  .upload-icon {
+    font-size: 3rem;
+  }
+}
