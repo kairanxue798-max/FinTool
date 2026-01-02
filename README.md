@@ -1,4 +1,4 @@
-# FinTool V1 - Financial Statement Generator
+# FinTool V2 - Financial Statement Generator
 
 A comprehensive financial analysis tool that automatically generates financial statements (Balance Sheet, Profit & Loss, Cash Flow) from CSV uploads. Features multi-entity support, KPI calculations, FX rate integration, and an AI-powered chatbot for financial insights.
 
@@ -6,6 +6,10 @@ A comprehensive financial analysis tool that automatically generates financial s
 
 ### Core Functionality
 - **CSV Upload & Processing**: Upload financial transaction data via CSV files
+- **File Summary Panel**: Automatically displays key metadata after upload:
+  - Total transactions count
+  - Number of unique accounts
+  - Date range covered
 - **Financial Statement Generation**: Automatically generates:
   - Balance Sheet (BS)
   - Profit & Loss Statement (PL)
@@ -36,13 +40,21 @@ A comprehensive financial analysis tool that automatically generates financial s
 - Subsidiary comparison and analysis
 - Revenue analysis by entity
 - Profit & Loss insights
+- **Categorized Suggested Questions**: Questions organized into 3 categories:
+  - Performance (Revenue YTD, Variance, Trailing 3M, TOP N, etc.)
+  - Risk and Unusual Transaction (Unusual transactions detection)
+  - Cash and Working Capital (AR Aging, DSO, FX Rates)
+- **Streamlined Interface**: Clean input field with integrated robot icon
 - Works without OpenAI API key (fallback analysis available)
 
 ### Modern UI/UX
+- **Corporate Trust Design System**: Professional, modern design with refined aesthetics
 - Interactive dots grid background with dollar icon
-- Glassmorphism design elements
+- Elevated card system with colored shadows
+- Optimized spacing and visual hierarchy
+- Enhanced button prominence
 - Responsive layout
-- Smooth animations
+- Smooth animations and micro-interactions
 
 ## 🚀 Quick Start
 
@@ -122,14 +134,17 @@ Sample data files are available in `example_data/` directory.
 ## 🎯 Usage
 
 1. **Upload CSV**: Click the upload area and select your CSV file
-2. **View Statements**: Financial statements will be generated automatically
-3. **Filter Data**: Use the filter panel to filter by entity and date range
-4. **Check FX Rates**: Use the FX Rate panel to view exchange rates
-5. **Ask Questions**: Use the chatbot to ask questions like:
-   - "Which subsidiary has the highest revenue?"
-   - "Compare revenue across all entities"
-   - "What's the total revenue?"
-   - "Show me profit and loss"
+2. **View Summary**: File summary panel automatically displays key metadata (total transactions, unique accounts, date range)
+3. **View Statements**: Financial statements will be generated automatically
+4. **Filter Data**: Use the filter panel to filter by entity and date range
+5. **Check FX Rates**: Use the FX Rate panel to view exchange rates
+6. **Ask Questions**: Use the chatbot to ask questions:
+   - Click suggested questions from categorized groups (Performance, Risk, Cash & Working Capital)
+   - Or type your own questions like:
+     - "Which subsidiary has the highest revenue?"
+     - "Compare revenue across all entities"
+     - "What's the total revenue?"
+     - "Show me profit and loss"
 
 ## 🏗️ Project Structure
 
@@ -192,7 +207,15 @@ fin/
 
 ## 📝 Version History
 
-### V1.0 (Current)
+### V2.0 (Current)
+- **File Summary Panel**: Automatic display of file metadata after CSV upload
+- **Categorized AI Suggestions**: Questions organized into 3 logical categories
+- **Streamlined Chat Interface**: Removed standalone greeting, integrated robot icon in input field
+- **Enhanced Design System**: Improved button prominence, optimized spacing
+- **Language Localization**: All UI elements display in English
+- **UI/UX Refinements**: Tighter module spacing, smaller header, better visual hierarchy
+
+### V1.0
 - Initial release
 - CSV upload and processing
 - Financial statement generation (BS, PL, CF)
@@ -221,4 +244,4 @@ For issues, questions, or contributions, please open an issue on GitHub.
 
 ---
 
-**FinTool V1** - Making financial analysis easier and more accessible.
+**FinTool V2** - Making financial analysis easier and more accessible.
