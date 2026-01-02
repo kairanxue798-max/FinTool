@@ -1,60 +1,55 @@
-# FinTool V2 - Financial Statement Generator
+# FinTool - Financial Statement Generator
 
 A comprehensive financial analysis tool that automatically generates financial statements (Balance Sheet, Profit & Loss, Cash Flow) from CSV uploads. Features multi-entity support, KPI calculations, FX rate integration, and an AI-powered chatbot for financial insights.
 
-## 🌟 Features
+## 🌟 Key Features
 
-### Core Functionality
-- **CSV Upload & Processing**: Upload financial transaction data via CSV files
-- **File Summary Panel**: Automatically displays key metadata after upload:
-  - Total transactions count
-  - Number of unique accounts
-  - Date range covered
-- **Financial Statement Generation**: Automatically generates:
-  - Balance Sheet (BS)
-  - Profit & Loss Statement (PL)
-  - Cash Flow Statement (CF)
+- **Automated Financial Statements**: Generate Balance Sheet, Profit & Loss, and Cash Flow statements from CSV data
+- **File Summary Panel**: Automatic display of key metadata (total transactions, unique accounts, date range)
+- **Multi-Entity Support**: Filter and compare performance across subsidiaries and entities
+- **KPI Analytics**: AR Aging, DSO, Revenue YTD, variance analysis, trailing metrics, and unusual transaction detection
+- **FX Rate Integration**: Fetch foreign exchange rates from ATO (Australian Taxation Office) with historical data support
+- **AI-Powered Chatbot**: Ask questions about your financial data with categorized suggested questions
+- **Modern UI/UX**: Professional design system with responsive layout and smooth animations
 
-### Multi-Entity Support
-- Filter transactions by entity/subsidiary
-- Compare performance across multiple entities
-- Entity-specific financial analysis
+## 🛠️ Tech Stack
 
-### KPI Calculations
-- **AR Aging**: Accounts Receivable aging analysis
-- **DSO**: Days Sales Outstanding calculation
-- **Revenue Analytics**:
-  - Revenue YTD (Year-to-Date)
-  - Revenue variance compared to previous month
-  - Trailing 3 months rolling revenue
-  - TOP N revenue transactions
-  - Unusual transaction detection (weekend postings)
+### Backend
+- **FastAPI** - Modern Python web framework
+- **Pandas** - Data manipulation and analysis
+- **OpenAI API** - AI-powered analysis (optional, fallback available)
+- **BeautifulSoup** - Web scraping for FX rates
 
-### FX Rate Integration
-- Fetch foreign exchange rates from ATO (Australian Taxation Office) website
-- Select date for historical FX rates
-- Currency conversion support
+### Frontend
+- **React** - UI framework
+- **TypeScript** - Type-safe JavaScript
+- **Vite** - Build tool and dev server
+- **GSAP** - Animation library
+- **CSS3** - Modern styling with Corporate Trust design system
 
-### AI-Powered Chatbot
-- Ask questions about your financial data
-- Subsidiary comparison and analysis
-- Revenue analysis by entity
-- Profit & Loss insights
-- **Categorized Suggested Questions**: Questions organized into 3 categories:
-  - Performance (Revenue YTD, Variance, Trailing 3M, TOP N, etc.)
-  - Risk and Unusual Transaction (Unusual transactions detection)
-  - Cash and Working Capital (AR Aging, DSO, FX Rates)
-- **Streamlined Interface**: Clean input field with integrated robot icon
-- Works without OpenAI API key (fallback analysis available)
+## 🏗️ Project Structure
 
-### Modern UI/UX
-- **Corporate Trust Design System**: Professional, modern design with refined aesthetics
-- Interactive dots grid background with dollar icon
-- Elevated card system with colored shadows
-- Optimized spacing and visual hierarchy
-- Enhanced button prominence
-- Responsive layout
-- Smooth animations and micro-interactions
+```
+fin/
+├── backend/
+│   ├── main.py                 # FastAPI application entry point
+│   ├── requirements.txt        # Python dependencies
+│   └── services/
+│       ├── ai_agent.py         # AI chatbot service
+│       ├── financial_statements.py  # Statement generation logic
+│       ├── fx_rate_service.py  # FX rate fetching service
+│       └── kpi_calculator.py   # KPI calculations
+├── frontend/
+│   ├── src/
+│   │   ├── App.tsx            # Main React component
+│   │   ├── components/        # React components
+│   │   └── index.css          # Global styles
+│   ├── package.json           # Node dependencies
+│   └── vite.config.ts         # Vite configuration
+├── example_data/              # Sample CSV files
+├── docs/                      # Documentation and development notes
+└── README.md                  # This file
+```
 
 ## 🚀 Quick Start
 
@@ -67,8 +62,8 @@ A comprehensive financial analysis tool that automatically generates financial s
 
 1. **Clone the repository**
    ```bash
-   git clone <your-repo-url>
-   cd fin
+   git clone https://github.com/kairanxue798-max/FinTool.git
+   cd FinTool
    ```
 
 2. **Backend Setup**
@@ -112,6 +107,35 @@ A comprehensive financial analysis tool that automatically generates financial s
 3. **Access the Application**
    Open your browser and navigate to: `http://localhost:3000`
 
+## 🎯 How to Use
+
+### 1. Upload Financial Data
+- Click the upload area or drag and drop your CSV file
+- The file summary panel will automatically display key metadata
+
+### 2. Generate Financial Statements
+- After upload, financial statements are generated automatically:
+  - **Balance Sheet**: Assets, Liabilities, and Equity
+  - **Profit & Loss**: Revenue, Expenses, and Net Income
+  - **Cash Flow**: Operating, Investing, and Financing activities
+
+### 3. Filter and Analyze
+- Use the filter panel to filter by entity/subsidiary and date range
+- View FX rates using the FX Rate panel
+- Statements automatically update based on filters
+
+### 4. Ask Questions and Get Insights
+- Use the AI chatbot to ask questions about your financial data
+- Click suggested questions from categorized groups:
+  - **Performance**: Revenue YTD, Variance, Trailing 3M, TOP N Revenue
+  - **Risk and Unusual Transaction**: Unusual transaction detection
+  - **Cash and Working Capital**: AR Aging, DSO, FX Rates
+- Or type your own questions like:
+  - "Which subsidiary has the highest revenue?"
+  - "Compare revenue across all entities"
+  - "What's the total revenue?"
+  - "Show me profit and loss"
+
 ## 📊 CSV Format
 
 Your CSV file should include the following columns:
@@ -130,43 +154,6 @@ date,account,amount,type,entity
 ```
 
 Sample data files are available in `example_data/` directory.
-
-## 🎯 Usage
-
-1. **Upload CSV**: Click the upload area and select your CSV file
-2. **View Summary**: File summary panel automatically displays key metadata (total transactions, unique accounts, date range)
-3. **View Statements**: Financial statements will be generated automatically
-4. **Filter Data**: Use the filter panel to filter by entity and date range
-5. **Check FX Rates**: Use the FX Rate panel to view exchange rates
-6. **Ask Questions**: Use the chatbot to ask questions:
-   - Click suggested questions from categorized groups (Performance, Risk, Cash & Working Capital)
-   - Or type your own questions like:
-     - "Which subsidiary has the highest revenue?"
-     - "Compare revenue across all entities"
-     - "What's the total revenue?"
-     - "Show me profit and loss"
-
-## 🏗️ Project Structure
-
-```
-fin/
-├── backend/
-│   ├── main.py                 # FastAPI application
-│   ├── requirements.txt        # Python dependencies
-│   └── services/
-│       ├── ai_agent.py         # AI chatbot service
-│       ├── financial_statements.py  # Statement generation
-│       ├── fx_rate_service.py  # FX rate fetching
-│       └── kpi_calculator.py   # KPI calculations
-├── frontend/
-│   ├── src/
-│   │   ├── App.tsx            # Main React component
-│   │   └── components/        # React components
-│   ├── package.json           # Node dependencies
-│   └── vite.config.ts         # Vite configuration
-├── example_data/              # Sample CSV files
-└── README.md                  # This file
-```
 
 ## 🔧 API Endpoints
 
@@ -190,48 +177,21 @@ fin/
 ### AI Chat
 - `POST /api/ai/chat` - Chat with AI assistant
 
-## 🛠️ Technologies Used
+## 📝 Notes
 
-### Backend
-- **FastAPI**: Modern Python web framework
-- **Pandas**: Data manipulation and analysis
-- **OpenAI API**: AI-powered analysis (optional)
-- **BeautifulSoup**: Web scraping for FX rates
+This repository contains the latest version of FinTool. Prior iterations are preserved in git history but are not maintained separately.
 
-### Frontend
-- **React**: UI framework
-- **TypeScript**: Type-safe JavaScript
-- **Vite**: Build tool and dev server
-- **GSAP**: Animation library
-- **CSS3**: Modern styling with glassmorphism
+## 📸 Screenshots
 
-## 📝 Version History
-
-### V2.0 (Current)
-- **File Summary Panel**: Automatic display of file metadata after CSV upload
-- **Categorized AI Suggestions**: Questions organized into 3 logical categories
-- **Streamlined Chat Interface**: Removed standalone greeting, integrated robot icon in input field
-- **Enhanced Design System**: Improved button prominence, optimized spacing
-- **Language Localization**: All UI elements display in English
-- **UI/UX Refinements**: Tighter module spacing, smaller header, better visual hierarchy
-
-### V1.0
-- Initial release
-- CSV upload and processing
-- Financial statement generation (BS, PL, CF)
-- Multi-entity support
-- KPI calculations (AR Aging, DSO, Revenue analytics)
-- FX rate integration (ATO)
-- AI chatbot with fallback analysis
-- Modern UI with interactive background
+_Coming soon: Screenshots of the application interface_
 
 ## 🤝 Contributing
 
-Contributions are welcome! Please feel free to submit a Pull Request.
+Contributions are welcome! Please see [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines.
 
 ## 📄 License
 
-This project is licensed under the MIT License - see the LICENSE file for details.
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ## 🙏 Acknowledgments
 
@@ -244,4 +204,4 @@ For issues, questions, or contributions, please open an issue on GitHub.
 
 ---
 
-**FinTool V2** - Making financial analysis easier and more accessible.
+**FinTool** - Making financial analysis easier and more accessible.
