@@ -4,7 +4,7 @@ A comprehensive financial analysis tool that automatically generates financial s
 
 ## 🌟 Key Features
 
-- **Automated Financial Statements**: Generate Balance Sheet, Profit & Loss, and Cash Flow statements from CSV data
+- **Automated Financial Statements**: Upload CSV files to generate Financial Statements
 - **File Summary Panel**: Automatic display of key metadata (total transactions, unique accounts, date range)
 - **Multi-Entity Support**: Filter and compare performance across subsidiaries and entities
 - **KPI Analytics**: AR Aging, DSO, Revenue YTD, variance analysis, trailing metrics, and unusual transaction detection
