@@ -183,9 +183,6 @@ This repository contains the latest version of FinTool. Prior iterations are pre
 
 ##  Screenshots
 
-### Main Dashboard
-![Main Dashboard](./screenshots/main-dashboard.png)
-
 ### Financial Statements
 ![Financial Statements](./screenshots/financial-statements.png)
 
