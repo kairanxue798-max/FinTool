@@ -7,6 +7,7 @@ import InteractiveDotsGrid from './components/InteractiveDotsGrid'
 import FilterPanel from './components/FilterPanel'
 import FXRatePanel from './components/FXRatePanel'
 import SummaryPanel from './components/SummaryPanel'
+import { buildApiUrl } from './utils/api'
 import './App.css'
 
 interface FinancialData {
@@ -39,7 +40,7 @@ function App() {
       const formData = new FormData()
       formData.append('file', file)
 
-      const uploadResponse = await fetch('/api/upload-csv', {
+      const uploadResponse = await fetch(buildApiUrl('/api/upload-csv'), {
         method: 'POST',
         body: formData,
       })
@@ -54,7 +55,7 @@ function App() {
       setTransactions(uploadData.transactions)
 
       // Generate financial statements with all transactions initially
-      const statementsResponse = await fetch('/api/generate-statements', {
+      const statementsResponse = await fetch(buildApiUrl('/api/generate-statements'), {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -114,7 +115,7 @@ function App() {
       setError(null) // Clear previous errors
 
       // Regenerate statements with filtered data
-      fetch('/api/generate-statements', {
+      fetch(buildApiUrl('/api/generate-statements'), {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

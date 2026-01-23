@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react'
+import { buildApiUrl } from '../utils/api'
 import './FXRatePanel.css'
 
 interface FXRate {
@@ -56,7 +57,7 @@ function FXRatePanel() {
       }
       
       // Call backend to fetch ATO rates
-      const response = await fetch(`/api/fx/ato-rates?year=${year}&month=${month}`)
+      const response = await fetch(buildApiUrl(`/api/fx/ato-rates?year=${year}&month=${month}`))
       
       if (!response.ok) {
         const errorData = await response.json().catch(() => ({}))

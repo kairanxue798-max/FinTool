@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { buildApiUrl } from '../utils/api'
 import './AIAnalysis.css'
 
 interface AIAnalysisProps {
@@ -27,7 +28,7 @@ function AIAnalysis({ financialData }: AIAnalysisProps) {
     try {
       // For demo purposes, we'll use current period as both current and previous
       // In a real scenario, you'd have separate periods
-      const response = await fetch('/api/ai/variance-analysis', {
+      const response = await fetch(buildApiUrl('/api/ai/variance-analysis'), {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -61,7 +62,7 @@ function AIAnalysis({ financialData }: AIAnalysisProps) {
     setError(null)
     
     try {
-      const response = await fetch('/api/ai/kpi-analysis', {
+      const response = await fetch(buildApiUrl('/api/ai/kpi-analysis'), {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

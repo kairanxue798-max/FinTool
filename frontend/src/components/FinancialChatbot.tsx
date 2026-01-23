@@ -1,4 +1,5 @@
 import { useState, useRef, useEffect } from 'react'
+import { buildApiUrl } from '../utils/api'
 import './FinancialChatbot.css'
 
 interface Message {
@@ -50,7 +51,7 @@ function FinancialChatbot({ financialData, transactions = [], selectedEntity }: 
       let kpiResult = null
       
       if (question.includes('revenue ytd') || question.includes('ytd revenue')) {
-        const response = await fetch('/api/kpi/revenue-ytd', {
+        const response = await fetch(buildApiUrl('/api/kpi/revenue-ytd'), {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({ transactions, entity: selectedEntity })
@@ -59,7 +60,7 @@ function FinancialChatbot({ financialData, transactions = [], selectedEntity }: 
           kpiResult = await response.json()
         }
       } else if (question.includes('revenue variance') || question.includes('variance')) {
-        const response = await fetch('/api/kpi/revenue-variance', {
+        const response = await fetch(buildApiUrl('/api/kpi/revenue-variance'), {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({ transactions, entity: selectedEntity })
@@ -68,7 +69,7 @@ function FinancialChatbot({ financialData, transactions = [], selectedEntity }: 
           kpiResult = await response.json()
         }
       } else if (question.includes('trailing 3') || question.includes('3 months')) {
-        const response = await fetch('/api/kpi/trailing-3m', {
+        const response = await fetch(buildApiUrl('/api/kpi/trailing-3m'), {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({ transactions, entity: selectedEntity })
@@ -77,7 +78,7 @@ function FinancialChatbot({ financialData, transactions = [], selectedEntity }: 
           kpiResult = await response.json()
         }
       } else if (question.includes('top') && (question.includes('revenue') || question.includes('transaction'))) {
-        const response = await fetch('/api/kpi/top-n', {
+        const response = await fetch(buildApiUrl('/api/kpi/top-n'), {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({ transactions, entity: selectedEntity })
@@ -86,7 +87,7 @@ function FinancialChatbot({ financialData, transactions = [], selectedEntity }: 
           kpiResult = await response.json()
         }
       } else if (question.includes('unusual') || question.includes('weekend')) {
-        const response = await fetch('/api/kpi/unusual-transactions', {
+        const response = await fetch(buildApiUrl('/api/kpi/unusual-transactions'), {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({ transactions, entity: selectedEntity })
@@ -95,7 +96,7 @@ function FinancialChatbot({ financialData, transactions = [], selectedEntity }: 
           kpiResult = await response.json()
         }
       } else if (question.includes('ar aging') || question.includes('aging')) {
-        const response = await fetch('/api/kpi/ar-aging', {
+        const response = await fetch(buildApiUrl('/api/kpi/ar-aging'), {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({ transactions, entity: selectedEntity })
@@ -104,7 +105,7 @@ function FinancialChatbot({ financialData, transactions = [], selectedEntity }: 
           kpiResult = await response.json()
         }
       } else if (question.includes('dso') || question.includes('days sales outstanding')) {
-        const response = await fetch('/api/kpi/dso', {
+        const response = await fetch(buildApiUrl('/api/kpi/dso'), {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({ transactions, entity: selectedEntity, period_days: 30 })
@@ -175,7 +176,7 @@ function FinancialChatbot({ financialData, transactions = [], selectedEntity }: 
       })
 
       // Directly make the chat request - let it fail naturally if backend is down
-      const response = await fetch('/api/ai/chat', {
+      const response = await fetch(buildApiUrl('/api/ai/chat'), {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -212,7 +213,7 @@ function FinancialChatbot({ financialData, transactions = [], selectedEntity }: 
       if (errorMsg.includes('Failed to fetch') || errorMsg.includes('NetworkError') || errorMsg.includes('ERR_CONNECTION_REFUSED')) {
         // Test if backend is actually running
         try {
-          const testResponse = await fetch('/api/health', { 
+          const testResponse = await fetch(buildApiUrl('/api/health'), { 
             method: 'GET',
             signal: AbortSignal.timeout(3000)
           })
