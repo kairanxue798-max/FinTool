@@ -157,7 +157,7 @@ function App() {
       <InteractiveDotsGrid />
       <header className="app-header">
         <h1>💰 Financial Statement Generator</h1>
-        <p>Upload CSV files to generate Balance Sheet, Profit & Loss, and Cash Flow statements</p>
+        <p>Upload CSV files to generate Financial Statements</p>
       </header>
 
       <main className="app-main">

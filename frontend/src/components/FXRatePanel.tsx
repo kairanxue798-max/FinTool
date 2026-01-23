@@ -7,6 +7,19 @@ interface FXRate {
   date: string
 }
 
+const FALLBACK_RATES: Array<{ currency: string; rate: number }> = [
+  { currency: 'USD', rate: 0.65 },
+  { currency: 'EUR', rate: 0.60 },
+  { currency: 'GBP', rate: 0.52 },
+  { currency: 'JPY', rate: 97.5 },
+  { currency: 'CNY', rate: 4.7 },
+  { currency: 'HKD', rate: 5.08 },
+  { currency: 'SGD', rate: 0.88 },
+  { currency: 'NZD', rate: 1.08 },
+  { currency: 'CAD', rate: 0.89 },
+  { currency: 'CHF', rate: 0.58 },
+]
+
 function FXRatePanel() {
   const [selectedDate, setSelectedDate] = useState<string>('')
   const [fxRates, setFxRates] = useState<FXRate[]>([])
@@ -20,6 +33,13 @@ function FXRatePanel() {
     const month = String(now.getMonth() + 1).padStart(2, '0')
     setSelectedDate(`${year}-${month}`)
   }, [])
+
+  const getFallbackRates = (date: string): FXRate[] =>
+    FALLBACK_RATES.map(rate => ({
+      currency: rate.currency,
+      rate: String(rate.rate),
+      date,
+    }))
 
   const fetchATOFXRates = async (date: string) => {
     if (!date) return
@@ -71,7 +91,7 @@ function FXRatePanel() {
       console.error('FX Rate fetch error:', err)
       setError(err.message || 'Failed to fetch FX rates from ATO. Using fallback rates.')
       // Still try to show fallback rates
-      setFxRates([])
+      setFxRates(getFallbackRates(date))
     } finally {
       setLoading(false)
     }
@@ -132,7 +152,7 @@ function FXRatePanel() {
         </div>
       )}
 
-      {!loading && !error && fxRates.length > 0 && (
+      {!loading && fxRates.length > 0 && (
         <div className="fx-rates-table-container">
           <div className="fx-rates-info">
             <span>Base Currency: <strong>AUD</strong></span>
