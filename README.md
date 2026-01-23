@@ -2,7 +2,7 @@
 
 A comprehensive financial analysis tool that automatically generates financial statements (Balance Sheet, Profit & Loss, Cash Flow) from CSV uploads. Features multi-entity support, KPI calculations, FX rate integration, and an AI-powered chatbot for financial insights.
 
-## 🌟 Key Features
+## Key Features
 
 - **Automated Financial Statements**: Upload CSV files to generate Financial Statements
 - **File Summary Panel**: Automatic display of key metadata (total transactions, unique accounts, date range)
@@ -12,7 +12,7 @@ A comprehensive financial analysis tool that automatically generates financial s
 - **AI-Powered Chatbot**: Ask questions about your financial data with categorized suggested questions
 - **Modern UI/UX**: Professional design system with responsive layout and smooth animations
 
-## 🛠️ Tech Stack
+## Tech Stack
 
 ### Backend
 - **FastAPI** - Modern Python web framework
@@ -27,7 +27,7 @@ A comprehensive financial analysis tool that automatically generates financial s
 - **GSAP** - Animation library
 - **CSS3** - Modern styling with Corporate Trust design system
 
-## 🏗️ Project Structure
+## Project Structure
 
 ```
 fin/
@@ -51,7 +51,7 @@ fin/
 └── README.md                  # This file
 ```
 
-## 🚀 Quick Start
+## Quick Start
 
 ### Prerequisites
 - Python 3.9+
@@ -107,7 +107,7 @@ fin/
 3. **Access the Application**
    Open your browser and navigate to: `http://localhost:3000`
 
-## 🎯 How to Use
+##  How to Use
 
 ### 1. Upload Financial Data
 - Click the upload area or drag and drop your CSV file
@@ -136,7 +136,7 @@ fin/
   - "What's the total revenue?"
   - "Show me profit and loss"
 
-## 📊 CSV Format
+##  CSV Format
 
 Your CSV file should include the following columns:
 - `date`: Transaction date (YYYY-MM-DD)
@@ -155,7 +155,7 @@ date,account,amount,type,entity
 
 Sample data files are available in `example_data/` directory.
 
-## 🔧 API Endpoints
+##  API Endpoints
 
 ### Financial Statements
 - `POST /api/upload-csv` - Upload CSV file
@@ -177,28 +177,28 @@ Sample data files are available in `example_data/` directory.
 ### AI Chat
 - `POST /api/ai/chat` - Chat with AI assistant
 
-## 📝 Notes
+##  Notes
 
 This repository contains the latest version of FinTool. Prior iterations are preserved in git history but are not maintained separately.
 
-## 📸 Screenshots
+##  Screenshots
 
 _Coming soon: Screenshots of the application interface_
 
-## 🤝 Contributing
+##  Contributing
 
 Contributions are welcome! Please see [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines.
 
-## 📄 License
+##  License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-## 🙏 Acknowledgments
+##  Acknowledgments
 
 - ATO (Australian Taxation Office) for FX rate data
 - OpenAI for AI capabilities (optional)
 
-## 📧 Support
+##  Support
 
 For issues, questions, or contributions, please open an issue on GitHub.
 
