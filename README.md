@@ -183,7 +183,19 @@ This repository contains the latest version of FinTool. Prior iterations are pre
 
 ##  Screenshots
 
-_Coming soon: Screenshots of the application interface_
+### Main Dashboard
+![Main Dashboard](./screenshots/main-dashboard.png)
+
+### Financial Statements
+![Financial Statements](./screenshots/financial-statements.png)
+
+### FX Rate Panel
+![FX Rate Panel](./screenshots/fx-rate-panel.png)
+
+### AI Chatbot
+![AI Chatbot](./screenshots/ai-chatbot.png)
+
+> **Note**: To add screenshots, take screenshots of your application and save them in the `screenshots/` directory with the filenames above. The screenshots will automatically appear on GitHub.
 
 ##  Contributing
 

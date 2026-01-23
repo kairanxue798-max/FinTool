@@ -143,15 +143,6 @@ function FXRatePanel() {
         </div>
       )}
 
-      {error && (
-        <div className="fx-error">
-          ⚠️ {error}
-          <div className="fx-error-note">
-            Note: The system is using fallback rates. For official ATO rates, please visit the ATO website directly.
-          </div>
-        </div>
-      )}
-
       {!loading && fxRates.length > 0 && (
         <div className="fx-rates-table-container">
           <div className="fx-rates-info">
