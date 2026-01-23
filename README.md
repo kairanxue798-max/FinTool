@@ -2,6 +2,12 @@
 
 A comprehensive financial analysis tool that automatically generates financial statements (Balance Sheet, Profit & Loss, Cash Flow) from CSV uploads. Features multi-entity support, KPI calculations, FX rate integration, and an AI-powered chatbot for financial insights.
 
+## 🌐 Live Application
+
+**👉 [Access the live application here](https://fin-tool.vercel.app)**
+
+The application is deployed and ready to use. Simply visit the link above to start analyzing your financial data!
+
 ## Key Features
 
 - **Automated Financial Statements**: Upload CSV files to generate Financial Statements
@@ -105,7 +111,8 @@ fin/
    Frontend will run on `http://localhost:3000`
 
 3. **Access the Application**
-   Open your browser and navigate to: `http://localhost:3000`
+   - **Online Version**: Visit [https://fin-tool.vercel.app](https://fin-tool.vercel.app) (recommended)
+   - **Local Development**: Open your browser and navigate to: `http://localhost:3000`
 
 ##  How to Use
 
