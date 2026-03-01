@@ -8,6 +8,14 @@ A comprehensive financial analysis tool that automatically generates financial s
 
 The application is deployed and ready to use. Simply visit the link above to start analyzing your financial data!
 
+## 🎥 Demo Video
+
+Watch a quick demonstration of FinTool in action:
+
+**👉 [Watch Demo Video](./demo/Demo.mov)**
+
+The demo showcases key features including CSV upload, financial statement generation, filtering, and AI-powered insights.
+
 ## Key Features
 
 - **Automated Financial Statements**: Upload CSV files to generate Financial Statements
