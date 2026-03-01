@@ -12,7 +12,7 @@ The application is deployed and ready to use. Simply visit the link above to sta
 
 Watch a quick demonstration of FinTool in action:
 
-**👉 [Watch Demo Video](./demo/Demo.mov)**
+**👉 [Watch Demo Video](./demo/Demo.mp4)**
 
 The demo showcases key features including CSV upload, financial statement generation, filtering, and AI-powered insights.
 
